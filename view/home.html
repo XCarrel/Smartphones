@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smartphone</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+<h1>Mes téléphones</h1>
+<div class="col-md-4">
+    <?php foreach($phones as $onePhone) { ?>
+    <h2>Téléphone <?= $onePhone->getIdSmartphone() ?></h2>
+    <table class="table">
+        <tr>
+            <td>Marque</td>
+            <td><?= $onePhone->getBrand() ?></td>
+        </tr>
+        <tr>
+            <td>Modèle</td>
+            <td><?= $onePhone->getModel() ?></td>
+        </tr>
+        <tr>
+            <td>OS</td>
+            <td><?= $onePhone->getOsName() ?></td>
+        </tr>
+        <tr>
+            <td>Version</td>
+            <td><?= $onePhone->getOsVersion() ?></td>
+        </tr>
+
+        <!-- from here, display is adapted to the type of object -->
+
+        <!-- Android -->
+
+        <?php if (get_class($onePhone) == "Android") { ?>
+        <tr>
+            <td colspan="2" align="center">--- Spécificités Android ---</td>
+        </tr>
+        <tr>
+            <td>Carte SD</td>
+            <td><?= $onePhone->getSd() ?>Gb</td>
+        </tr>
+        <?php } ?>
+
+        <!-- iPhone -->
+
+        <?php if (get_class($onePhone) == "IPhone") { ?>
+        <tr>
+            <td colspan="2" align="center">--- Spécificités iPhone ---</td>
+        </tr>
+        <tr>
+            <td>3D Touch</td>
+            <td><?= $onePhone->hasThreeDT() ? "Oui":"Non" ?></td>
+        </tr>
+        <?php } ?>
+    </table>
+    <?php } ?>
+</div>
+</body>
+</html>

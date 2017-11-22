@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mamp">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="smartphones">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="app_internships"/>
+    <schema id="4" parent="1" name="app_pfinfo"/>
+    <schema id="5" parent="1" name="GPNV"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="joutes"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="runners"/>
+    <schema id="11" parent="1" name="spos"/>
+    <schema id="12" parent="1" name="SQLTester"/>
+    <schema id="13" parent="1" name="TCC"/>
+    <schema id="14" parent="1" name="app_internshipsand"/>
+    <schema id="15" parent="1" name="smartphone"/>
+    <table id="16" parent="2" name="Android"/>
+    <table id="17" parent="2" name="iPhone"/>
+    <table id="18" parent="2" name="smartphone"/>
+    <column id="19" parent="16" name="idAndroid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="16" name="fkPhone">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="16" name="sd">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="22" parent="16" name="phone_idx">
+      <ColNames>fkPhone</ColNames>
+    </index>
+    <key id="23" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idAndroid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="16" name="phone">
+      <ColNames>fkPhone</ColNames>
+      <RefSchemaName>smartphones</RefSchemaName>
+      <RefTableName>smartphone</RefTableName>
+      <RefColNames>idSmartphone</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="25" parent="17" name="idiPhone">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="17" name="fkPhone">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="17" name="threeDT">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="28" parent="17" name="phone_idx">
+      <ColNames>fkPhone</ColNames>
+    </index>
+    <key id="29" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idiPhone</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="17" name="iosphone">
+      <ColNames>fkPhone</ColNames>
+      <RefSchemaName>smartphones</RefSchemaName>
+      <RefTableName>smartphone</RefTableName>
+      <RefColNames>idSmartphone</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="31" parent="18" name="idSmartphone">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="18" name="brand">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="18" name="model">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="18" name="osName">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="18" name="osVersion">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="36" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idSmartphone</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
